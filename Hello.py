@@ -17,12 +17,10 @@ st.set_page_config(
     page_icon="👋",
 )
 
-
 # -------- load secrets for jsonbin.io --------
 jsonbin_secrets = st.secrets["jsonbin"]
 api_key = jsonbin_secrets["api_key"]
 bin_id = jsonbin_secrets["bin_id"]
-
 
 # -------- user login --------
 with open('config.yaml') as file:
@@ -46,9 +44,8 @@ elif authentication_status == None:
     st.warning('Please enter your username and password')
     st.stop()
 
-
-
 data = load_key(api_key, bin_id, username)
+
 st.write (data)
 
 
